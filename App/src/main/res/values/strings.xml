@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QuickAndroid</string>
+    <string name="about">About</string>
+    <string name="demo_list">Demo List</string>
 </resources>
