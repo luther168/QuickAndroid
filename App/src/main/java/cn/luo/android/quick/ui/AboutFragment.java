@@ -1,5 +1,7 @@
 package cn.luo.android.quick.ui;
 
+import android.view.View;
+
 import cn.luo.android.quick.R;
 import cn.luo.android.quick.library.base.BaseFragment;
 
@@ -29,6 +31,11 @@ public class AboutFragment extends BaseFragment {
 
     @Override
     protected void initAfterView() {
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }

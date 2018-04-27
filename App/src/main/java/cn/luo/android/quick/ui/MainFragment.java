@@ -66,4 +66,9 @@ public class MainFragment extends BaseRecyclerViewFragment {
     protected void initAfterView() {
 
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

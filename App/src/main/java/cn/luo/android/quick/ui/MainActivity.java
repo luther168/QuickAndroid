@@ -40,6 +40,11 @@ public class MainActivity extends BaseWithFragmentActivity {
     }
 
     @Override
+    protected int getFinishType() {
+        return 0;
+    }
+
+    @Override
     protected boolean showTitle() {
         return true;
     }
