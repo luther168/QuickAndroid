@@ -16,10 +16,11 @@ import android.view.ViewGroup;
  * CREATE TIME:  2018/4/3 17:43
  * NOTE:
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
     protected BaseActivity activity;
     protected Context context;
+    protected LayoutInflater inflater;
 
     protected View rootView;
 
@@ -40,6 +41,7 @@ public abstract class BaseFragment extends Fragment {
 
         int layoutResId = getLayoutResId();
         rootView = inflater.inflate(layoutResId, container, false);
+        this.inflater = inflater;
 
         initView();
         initAfterView();

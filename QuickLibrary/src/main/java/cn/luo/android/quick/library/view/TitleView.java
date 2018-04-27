@@ -101,14 +101,14 @@ public class TitleView extends RelativeLayout {
         setTitleTextColor(titleTextColor);
 
         setLeftIcon(leftImageId);
-        setTvLeft(leftText);
-        setTvLeftTextSize(leftTextSize);
-        setTvLeftTextColor(leftTextColor);
+        setLeftText(leftText);
+        setLeftTextSize(leftTextSize);
+        setLeftTextColor(leftTextColor);
 
         setRightIcon(rightImageId);
-        setTvRight(rightText);
-        setTvRightTextColor(rightTextColor);
-        setTvRightTextSize(rightTextSize);
+        setRightText(rightText);
+        setRightTextColor(rightTextColor);
+        setRightTextSize(rightTextSize);
 
         showBottomLine(showBottomLine);
 
@@ -164,7 +164,7 @@ public class TitleView extends RelativeLayout {
         mTvTitle.setTextColor(textColor);
     }
 
-    public void setTvLeft(String text) {
+    public void setLeftText(String text) {
         if (TextUtils.isEmpty(text)) {
             mTvLeft.setVisibility(GONE);
         } else {
@@ -173,15 +173,15 @@ public class TitleView extends RelativeLayout {
         }
     }
 
-    public void setTvLeftTextSize(int textSize) {
+    public void setLeftTextSize(int textSize) {
         mTvLeft.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
     }
 
-    public void setTvLeftTextColor(int textColor) {
+    public void setLeftTextColor(int textColor) {
         mTvLeft.setTextColor(textColor);
     }
 
-    public void setTvRight(String text) {
+    public void setRightText(String text) {
         if (TextUtils.isEmpty(text)) {
             mTvRight.setVisibility(GONE);
         } else {
@@ -191,12 +191,12 @@ public class TitleView extends RelativeLayout {
     }
 
 
-    public void setTvRightTextSize(int textSize) {
+    public void setRightTextSize(int textSize) {
         mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
     }
 
 
-    public void setTvRightTextColor(int textColor) {
+    public void setRightTextColor(int textColor) {
         mTvRight.setTextColor(textColor);
     }
 

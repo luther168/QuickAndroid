@@ -100,4 +100,9 @@ public class DefaultSplashActivity extends BaseActivity {
     protected void initAfterView() {
 
     }
+
+    @Override
+    protected int getFinishType() {
+        return 0;
+    }
 }

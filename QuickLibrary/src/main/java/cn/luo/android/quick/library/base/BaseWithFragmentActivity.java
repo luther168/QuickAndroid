@@ -56,5 +56,9 @@ public abstract class BaseWithFragmentActivity extends BaseActivity {
 
     }
 
+    protected BaseFragment getCurFragment() {
+        return fragmentSparseArray.get(R.id.flFragment);
+    }
+
     protected abstract boolean showTitle();
 }
