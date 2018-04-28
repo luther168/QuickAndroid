@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation project(':QuickLibrary')
-//    implementation 'com.github.luther168:QuickAndroid:0.0.4'
+//    implementation 'com.github.luther168:QuickAndroid:0.0.6'
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
 

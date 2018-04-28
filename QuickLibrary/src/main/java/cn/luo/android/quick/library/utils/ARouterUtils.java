@@ -1,6 +1,10 @@
 package cn.luo.android.quick.library.utils;
 
+import android.support.v4.app.Fragment;
+
 import com.alibaba.android.arouter.launcher.ARouter;
+
+import cn.luo.android.quick.library.base.BaseLoadFailedFragment;
 
 /**
  * AUTHOR:       Luo
@@ -26,5 +30,10 @@ public class ARouterUtils {
 
     public static void toActivity(String url) {
         aRouter.build(url).navigation();
+    }
+
+    public static Fragment getFragment(String url) {
+        Object obj = aRouter.build(url).navigation();
+        return obj == null ? new BaseLoadFailedFragment() : (Fragment) obj;
     }
 }

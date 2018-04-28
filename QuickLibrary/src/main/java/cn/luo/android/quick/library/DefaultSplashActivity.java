@@ -27,7 +27,7 @@ public class DefaultSplashActivity extends BaseActivity {
 
     @Override
     protected void initBeforeView() {
-        setTheme(R.style.SplashTheme);
+        setTheme(getSplashTheme());
 
         String[] permissions = getRequestPermissions();
         if (permissions == null || permissions.length == 0) {
@@ -81,6 +81,10 @@ public class DefaultSplashActivity extends BaseActivity {
                     })
                     .request();
         }
+    }
+
+    protected int getSplashTheme() {
+        return R.style.SplashTheme;
     }
 
     protected void doAfterGranted() {

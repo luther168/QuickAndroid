@@ -6,6 +6,8 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.StringRes;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -27,6 +29,8 @@ import cn.luo.android.quick.library.R;
  */
 public class TitleView extends RelativeLayout {
 
+    private Context context;
+
     // View
     private TextView mTvTitle;
     private LinearLayout mLlLeft;
@@ -47,6 +51,7 @@ public class TitleView extends RelativeLayout {
 
     public TitleView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        this.context = context;
         initView(context);
         initAttrs(context, attrs);
     }
@@ -146,7 +151,7 @@ public class TitleView extends RelativeLayout {
         }
     }
 
-    public void setTitle(int resId) {
+    public void setTitle(@StringRes int resId) {
         String title = getContext().getString(resId);
         if (TextUtils.isEmpty(title)) {
             mTvTitle.setVisibility(GONE);
@@ -160,7 +165,7 @@ public class TitleView extends RelativeLayout {
         mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
     }
 
-    public void setTitleTextColor(int textColor) {
+    public void setTitleTextColor(@ColorInt int textColor) {
         mTvTitle.setTextColor(textColor);
     }
 
@@ -173,11 +178,15 @@ public class TitleView extends RelativeLayout {
         }
     }
 
+    public void setLeftText(@StringRes int textResId) {
+        setLeftText(context.getString(textResId));
+    }
+
     public void setLeftTextSize(int textSize) {
         mTvLeft.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
     }
 
-    public void setLeftTextColor(int textColor) {
+    public void setLeftTextColor(@ColorInt int textColor) {
         mTvLeft.setTextColor(textColor);
     }
 
@@ -190,18 +199,19 @@ public class TitleView extends RelativeLayout {
         }
     }
 
+    public void setRightText(@StringRes int textResId) {
+        setRightText(context.getString(textResId));
+    }
 
     public void setRightTextSize(int textSize) {
         mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
     }
 
-
-    public void setRightTextColor(int textColor) {
+    public void setRightTextColor(@ColorInt int textColor) {
         mTvRight.setTextColor(textColor);
     }
 
-
-    public void setLeftIcon(int resId) {
+    public void setLeftIcon(@DrawableRes int resId) {
         if (resId == 0) {
             mIvLeft.setVisibility(View.GONE);
         } else {
@@ -210,7 +220,7 @@ public class TitleView extends RelativeLayout {
         }
     }
 
-    public void setRightIcon(int resId) {
+    public void setRightIcon(@DrawableRes int resId) {
         if (resId == 0) {
             mIvRight.setVisibility(View.GONE);
         } else {
@@ -223,12 +233,10 @@ public class TitleView extends RelativeLayout {
         mOnClickTitleViewListener = listener;
     }
 
-
     public void showBottomLine(boolean visible) {
         mVLine.setVisibility(visible ? VISIBLE : INVISIBLE);
         showBottomLine = visible;
     }
-
 
     public void setShowRight(boolean visible) {
         mLlRight.setVisibility(visible ? VISIBLE : GONE);

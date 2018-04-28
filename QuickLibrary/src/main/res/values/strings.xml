@@ -3,4 +3,5 @@
     <string name="permission_rationale_message">请授予权限，否则无法正常使用</string>
     <string name="permission_denied_forever_message">未获得必要的权限，请到设置-权限开启</string>
     <string name="no_data">No data</string>
+    <string name="fragment_load_failed">Failed to load page</string>
 </resources>
