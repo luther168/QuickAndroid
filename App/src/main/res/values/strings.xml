@@ -2,4 +2,8 @@
     <string name="app_name">QuickAndroid</string>
     <string name="about">About</string>
     <string name="demo_list">Demo List</string>
+    <string name="database">Database</string>
+    <string name="start">Start</string>
+    <string name="label_count">数量：</string>
+    <string name="input_count">请输入数量</string>
 </resources>

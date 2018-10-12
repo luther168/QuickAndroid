@@ -1,5 +1,9 @@
 package cn.luo.android.quick.entity;
 
+import android.support.annotation.StringRes;
+
+import cn.luo.android.quick.App;
+
 /**
  * AUTHOR:       Luo
  * VERSION:      V1.0
@@ -12,8 +16,8 @@ public class Demo {
     private String title;
     private String routerUrl;
 
-    public Demo(String title, String routerUrl) {
-        this.title = title;
+    public Demo(@StringRes int resId, String routerUrl) {
+        this.title = App.getStringValue(resId);
         this.routerUrl = routerUrl;
     }
 

@@ -10,8 +10,9 @@ import cn.luo.android.quick.library.utils.ARouterUtils;
  * NOTE:
  */
 public class RouterUtils extends ARouterUtils {
-    public static final String GROUP_APP = "/app/";
-    public static final String GROUP_APP_ACTIVITY = "/app/" + GROUP_ACTIVITY;
+    private static final String GROUP_APP = "/app/";
+    private static final String GROUP_APP_ACTIVITY = GROUP_APP + GROUP_ACTIVITY;
+    public static final String ACTIVITY_DATABASE = GROUP_APP_ACTIVITY + "database";
 
     public static void toMainActivity() {
         toActivity(ACTIVITY_MAIN);

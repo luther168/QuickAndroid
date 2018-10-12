@@ -13,7 +13,7 @@ import cn.luo.android.quick.R;
 import cn.luo.android.quick.entity.Demo;
 import cn.luo.android.quick.library.base.BaseRecyclerViewFragment;
 import cn.luo.android.quick.library.binding.GenericRecyclerViewBindAdapter;
-import cn.luo.android.quick.library.view.RecyclerViewDivider;
+import cn.luo.android.quick.library.view.DividerLinearItemDecoration;
 import cn.luo.android.quick.util.RouterUtils;
 
 /**
@@ -32,7 +32,7 @@ public class MainFragment extends BaseRecyclerViewFragment {
 
     @Override
     protected void initRecyclerView() {
-        recyclerView.addItemDecoration(new RecyclerViewDivider(context, LinearLayoutManager.HORIZONTAL));
+        recyclerView.addItemDecoration(new DividerLinearItemDecoration(context, DividerLinearItemDecoration.VERTICAL_LIST));
 
         final GenericRecyclerViewBindAdapter<Demo> adapter = new GenericRecyclerViewBindAdapter<>(R.layout.item_demo_binding, this);
         recyclerView.setAdapter(adapter);
@@ -53,7 +53,8 @@ public class MainFragment extends BaseRecyclerViewFragment {
 
     private List<Demo> getDemoList() {
         List<Demo> demoList = new ArrayList<>();
-        demoList.add(new Demo(getString(R.string.about), RouterUtils.ACTIVITY_ABOUT));
+        demoList.add(new Demo(R.string.about, RouterUtils.ACTIVITY_ABOUT));
+        demoList.add(new Demo(R.string.database, RouterUtils.ACTIVITY_DATABASE));
         return demoList;
     }
 
