@@ -16,6 +16,7 @@ public class RouterUtils extends ARouterUtils {
 
     public static final String ACTIVITY_SQLCIPHER_HELPER = GROUP_APP_ACTIVITY + "sqlcipherHelper";
     public static final String ACTIVITY_DATABASE = GROUP_APP_ACTIVITY + "database";
+    public static final String ACTIVITY_ARCGIS = GROUP_APP_ACTIVITY + "arcgis";
 
     public static void toMainActivity() {
         toActivity(ACTIVITY_MAIN);

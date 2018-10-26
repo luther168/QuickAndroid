@@ -16,6 +16,10 @@ android {
                 arguments = [moduleName: project.getName()]
             }
         }
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
     }
     buildTypes {
         debug {
@@ -30,7 +34,11 @@ android {
             buildConfigField "Boolean", "IS_DEBUG", "false"
         }
     }
-
+    packagingOptions{
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
     dataBinding {
         enabled true
     }
@@ -57,4 +65,6 @@ dependencies {
     implementation 'net.zetetic:android-database-sqlcipher:3.5.9@aar'
 
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    implementation 'com.esri.arcgis.android:arcgis-android:10.2.9'
 }

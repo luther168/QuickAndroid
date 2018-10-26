@@ -22,4 +22,5 @@
     <string name="operate_suc">Operate success</string>
     <string name="operate_failed">Operate failed</string>
     <string name="operate_error">Operate error</string>
+    <string name="arcgis">Arcgis</string>
 </resources>
