@@ -55,6 +55,7 @@ public class MainFragment extends BaseRecyclerViewFragment {
         List<Demo> demoList = new ArrayList<>();
         demoList.add(new Demo(R.string.about, RouterUtils.ACTIVITY_ABOUT));
         demoList.add(new Demo(R.string.database, RouterUtils.ACTIVITY_DATABASE));
+        demoList.add(new Demo(R.string.sqlcipher_helper, RouterUtils.ACTIVITY_SQLCIPHER_HELPER));
         return demoList;
     }
 

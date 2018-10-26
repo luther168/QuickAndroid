@@ -1,5 +1,6 @@
 package cn.luo.android.quick.library.base;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.blankj.utilcode.util.LogUtils;
@@ -54,6 +55,12 @@ public abstract class BaseWithFragmentActivity extends BaseActivity {
     @Override
     protected void initAfterView() {
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        getCurFragment().onActivityResult(requestCode, resultCode, data);
     }
 
     protected BaseFragment getCurFragment() {
