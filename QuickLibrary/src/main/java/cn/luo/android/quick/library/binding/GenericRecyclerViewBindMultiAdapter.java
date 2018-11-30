@@ -16,27 +16,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/9/5.
- * 用来实现万能绑定适配器
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 16:56
+ * @note
  */
 public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity> extends BaseMultiItemQuickAdapter<T, GenericRecyclerViewBindMultiAdapter.ViewHolder> {
 
-    private Fragment fragment;
+    private View.OnClickListener listener;
 
-    public GenericRecyclerViewBindMultiAdapter(List<T> data,
-                                               Fragment fragment,
-                                               List<QuickViewType> viewTypeList) {
+    public GenericRecyclerViewBindMultiAdapter(List<T> data, View.OnClickListener listener, List<QuickViewType> viewTypeList) {
         super(data);
-        this.fragment = fragment;
+        this.listener = listener;
         for (int i = 0; i < viewTypeList.size(); i++) {
             addItemType(viewTypeList.get(i).getViewType(), viewTypeList.get(i).getLayoutResId());
         }
     }
 
-    public GenericRecyclerViewBindMultiAdapter(Fragment fragment,
-                                               List<QuickViewType> viewTypeList) {
+    public GenericRecyclerViewBindMultiAdapter(View.OnClickListener listener, List<QuickViewType> viewTypeList) {
         super(new ArrayList<T>());
-        this.fragment = fragment;
+        this.listener = listener;
         for (int i = 0; i < viewTypeList.size(); i++) {
             addItemType(viewTypeList.get(i).getViewType(), viewTypeList.get(i).getLayoutResId());
         }
@@ -44,7 +44,7 @@ public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity> exte
 
     @Override
     protected void convert(ViewHolder helper, T item) {
-        helper.bind(item, fragment);
+        helper.bind(item, listener);
     }
 
     public static class ViewHolder extends BaseViewHolder {
@@ -59,10 +59,10 @@ public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity> exte
             return binding;
         }
 
-        void bind(@NonNull Object item, Fragment fragment) {
+        void bind(@NonNull Object item, View.OnClickListener listener) {
             binding.setVariable(BR.item, item);
-            if (fragment != null) {
-                binding.setVariable(BR.listener, fragment);
+            if (listener != null) {
+                binding.setVariable(BR.listener, listener);
             }
             binding.setVariable(BR.position, getLayoutPosition());
         }

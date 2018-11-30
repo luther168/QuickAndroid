@@ -21,11 +21,11 @@ import android.widget.TextView;
 import cn.luo.android.quick.library.R;
 
 /**
- * AUTHOR:       Luo
- * VERSION:      V1.0
- * DESCRIPTION:  description
- * CREATE TIME:  2018/2/8 9:55
- * NOTE:
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 17:01
+ * @note
  */
 public class TitleView extends RelativeLayout {
 

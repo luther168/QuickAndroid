@@ -1,5 +1,6 @@
 package cn.luo.android.quick.library;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.DialogInterface;
 
@@ -12,11 +13,11 @@ import cn.luo.android.quick.library.base.BaseActivity;
 import cn.luo.android.quick.library.utils.DialogUtils;
 
 /**
- * AUTHOR:       Luo
- * VERSION:      V1.0
- * DESCRIPTION:  description
- * CREATE TIME:        2018/4/3 16:48
- * NOTE:
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 17:02
+ * @note
  */
 public class DefaultSplashActivity extends BaseActivity {
 
@@ -25,6 +26,7 @@ public class DefaultSplashActivity extends BaseActivity {
         return -1;
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     protected void initBeforeView() {
         setTheme(getSplashTheme());

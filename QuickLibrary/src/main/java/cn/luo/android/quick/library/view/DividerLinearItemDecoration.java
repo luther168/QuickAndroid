@@ -14,11 +14,11 @@ import android.view.View;
 import com.blankj.utilcode.util.LogUtils;
 
 /**
- * @author Hurston
- * @version V1.0.0
+ * @author      Hurston
+ * @version     1.0.0
  * @description
- * @createdTime 2018/9/30 10:12
- * @note:
+ * @createdTime 2018/11/28 17:01
+ * @note
  */
 public class DividerLinearItemDecoration extends RecyclerView.ItemDecoration {
 

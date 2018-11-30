@@ -5,11 +5,11 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 
 /**
- * AUTHOR:       Luo
- * VERSION:      V1.0
- * DESCRIPTION:  description
- * CREATE TIME:  2018/4/3 17:13
- * NOTE:
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 17:01
+ * @note
  */
 public class DialogUtils {
 

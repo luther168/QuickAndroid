@@ -10,11 +10,11 @@ import android.util.SparseArray;
 import cn.luo.android.quick.library.R;
 
 /**
- * AUTHOR:      Luo
- * VERSION:     V1.0
- * DESCRIPTION: description
- * CREATE TIME: 2018/4/3 16:41
- * NOTE:
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 16:16
+ * @note
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
@@ -44,37 +44,18 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * 切换Fragment
+     * Switch fragment
      *
-     * @param toBaseFragment 目标Fragment
+     * @param toBaseFragment Target fragment
      */
     protected void switchFragment(BaseFragment toBaseFragment, int container) {
-        BaseFragment fromBaseFragment = fragmentSparseArray.get(container);
-        if (fromBaseFragment != toBaseFragment) {
-            FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
-            if (fromBaseFragment != null) {
-                transaction.hide(fromBaseFragment);
-                //Fragment退出
-                fromBaseFragment.onFragmentExit();
-            }
-            if (!toBaseFragment.isAdded()) {
-                // 先判断是否被add过
-                // 隐藏当前的fragment，add下一个到Activity中
-                transaction.add(container, toBaseFragment).commit();
-            } else {
-                // 隐藏当前的fragment，显示下一个
-                transaction.show(toBaseFragment).commit();
-            }
-            fragmentSparseArray.put(container, toBaseFragment);
-            //进入当前的exit
-            toBaseFragment.onFragmentEnter();
-        }
+        switchFragment(toBaseFragment, container, 0, 0);
     }
 
     /**
-     * 切换Fragment
+     * Switch fragment
      *
-     * @param toBaseFragment 目标Fragment
+     * @param toBaseFragment Target fragment
      */
     protected void switchFragment(BaseFragment toBaseFragment, int container, int animEnter, int animExit) {
         BaseFragment fromBaseFragment = fragmentSparseArray.get(container);
@@ -82,20 +63,17 @@ public abstract class BaseActivity extends AppCompatActivity {
             FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
             if (fromBaseFragment != null) {
                 transaction.hide(fromBaseFragment);
-                //Fragment退出
                 fromBaseFragment.onFragmentExit();
             }
-            transaction.setCustomAnimations(animEnter, animExit);
-            if (!toBaseFragment.isAdded()) {
-                // 先判断是否被add过
-                // 隐藏当前的fragment，add下一个到Activity中
-                transaction.add(container, toBaseFragment).commit();
-            } else {
-                // 隐藏当前的fragment，显示下一个
+            if (animEnter != 0 && animExit != 0) {
+                transaction.setCustomAnimations(animEnter, animExit);
+            }
+            if (toBaseFragment.isAdded()) {
                 transaction.show(toBaseFragment).commit();
+            } else {
+                transaction.add(container, toBaseFragment).commit();
             }
             fragmentSparseArray.put(container, toBaseFragment);
-            //进入当前的exit
             toBaseFragment.onFragmentEnter();
         }
     }

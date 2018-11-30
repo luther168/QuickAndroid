@@ -5,7 +5,6 @@ import android.databinding.ViewDataBinding;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -16,31 +15,34 @@ import cn.luo.android.quick.library.BR;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/9/5.
- * 用来实现万能绑定适配器
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 16:55
+ * @note
  */
 public class GenericRecyclerViewBindAdapter<T> extends BaseQuickAdapter<T, GenericRecyclerViewBindAdapter.ViewHolder> {
 
-    private Fragment fragment;
+    private View.OnClickListener listener;
 
-    public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId, @Nullable List<T> data, Fragment fragment) {
+    public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId, @Nullable List<T> data, View.OnClickListener listener) {
         super(layoutResId, data);
-        this.fragment = fragment;
+        this.listener = listener;
     }
 
-    public GenericRecyclerViewBindAdapter(@Nullable List<T> data, Fragment fragment) {
+    public GenericRecyclerViewBindAdapter(@Nullable List<T> data, View.OnClickListener listener) {
         super(data);
-        this.fragment = fragment;
+        this.listener = listener;
     }
 
-    public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId, Fragment fragment) {
+    public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId, View.OnClickListener listener) {
         super(layoutResId);
-        this.fragment = fragment;
+        this.listener = listener;
     }
 
     @Override
     protected void convert(ViewHolder helper, T item) {
-        helper.bind(item, fragment);
+        helper.bind(item, listener);
     }
 
     public static class ViewHolder extends BaseViewHolder {
@@ -55,10 +57,10 @@ public class GenericRecyclerViewBindAdapter<T> extends BaseQuickAdapter<T, Gener
             return binding;
         }
 
-        void bind(@NonNull Object item, Fragment fragment) {
+        void bind(@NonNull Object item, View.OnClickListener listener) {
             binding.setVariable(BR.item, item);
-            if (fragment != null) {
-                binding.setVariable(BR.listener, fragment);
+            if (listener != null) {
+                binding.setVariable(BR.listener, listener);
             }
             binding.setVariable(BR.position, getLayoutPosition());
         }

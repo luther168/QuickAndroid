@@ -7,17 +7,17 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import cn.luo.android.quick.library.base.BaseLoadFailedFragment;
 
 /**
- * AUTHOR:       Luo
- * VERSION:      V1.0
- * DESCRIPTION:  description
- * CREATE TIME:  2018/4/4 9:08
- * NOTE:
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 16:58
+ * @note
  */
 public class ARouterUtils {
 
     public static final String TAG = ARouterUtils.class.getSimpleName();
 
-    public static final String DEFAULT_ROOT_GROUP = "/aRouterUtils/";
+    public static final String DEFAULT_ROOT_GROUP = "/ARouterUtils/";
     public static final String GROUP_ACTIVITY = "activity/";
     public static final String GROUP_DEFAULT_ACTIVITY = DEFAULT_ROOT_GROUP + GROUP_ACTIVITY;
 
@@ -30,6 +30,18 @@ public class ARouterUtils {
 
     public static void toActivity(String url) {
         aRouter.build(url).navigation();
+    }
+
+    public static void toLoginActivity() {
+        toActivity(ACTIVITY_LOGIN);
+    }
+
+    public static void toMainActivity() {
+        toActivity(ACTIVITY_MAIN);
+    }
+
+    public static void toAboutActivity() {
+        toActivity(ACTIVITY_ABOUT);
     }
 
     public static Fragment getFragment(String url) {

@@ -17,7 +17,6 @@
         <attr name="rightTextSize" format="dimension" />
         <attr name="showLine" format="boolean" />
     </declare-styleable>
-
     <attr name="titleTextGravity">
         <flag name="center_vertical" value="16" />
         <flag name="center" value="17" />

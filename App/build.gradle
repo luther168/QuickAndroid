@@ -2,14 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'io.objectbox'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "cn.luo.android.quick"
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "v1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
 
         javaCompileOptions {
             annotationProcessorOptions {

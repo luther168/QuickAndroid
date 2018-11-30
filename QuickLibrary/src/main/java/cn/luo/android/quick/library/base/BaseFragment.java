@@ -10,11 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * AUTHOR:       Luo
- * VERSION:      V1.0
- * DESCRIPTION:  description
- * CREATE TIME:  2018/4/3 17:43
- * NOTE:
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 16:16
+ * @note
  */
 public abstract class BaseFragment extends Fragment implements View.OnClickListener {
 
@@ -48,14 +48,6 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         return rootView;
     }
 
-    protected abstract void initBeforeView();
-
-    protected abstract int getLayoutResId();
-
-    protected abstract void initView();
-
-    protected abstract void initAfterView();
-
     @Override
     public void onPause() {
         super.onPause();
@@ -73,4 +65,12 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     public void onFragmentExit() {
     }
+
+    protected abstract void initBeforeView();
+
+    protected abstract int getLayoutResId();
+
+    protected abstract void initView();
+
+    protected abstract void initAfterView();
 }

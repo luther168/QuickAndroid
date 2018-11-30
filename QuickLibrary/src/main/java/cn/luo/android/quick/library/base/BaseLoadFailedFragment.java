@@ -5,16 +5,16 @@ import android.view.View;
 import cn.luo.android.quick.library.R;
 
 /**
- * AUTHOR:       Luo
- * VERSION:      V1.0
- * DESCRIPTION:  description
- * CREATE TIME:  2018/4/28 17:03
- * NOTE:
+ * @author      Hurston
+ * @version     1.0.0
+ * @description
+ * @createdTime 2018/11/28 16:17
+ * @note
  */
 public class BaseLoadFailedFragment extends BaseFragment {
+
     @Override
     protected void initBeforeView() {
-
     }
 
     @Override
@@ -24,16 +24,13 @@ public class BaseLoadFailedFragment extends BaseFragment {
 
     @Override
     protected void initView() {
-
     }
 
     @Override
     protected void initAfterView() {
-
     }
 
     @Override
     public void onClick(View v) {
-
     }
 }
