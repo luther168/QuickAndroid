@@ -1,14 +1,18 @@
 apply plugin: 'com.android.application'
 apply plugin: 'io.objectbox'
 
+def androidConfig = rootProject.ext.android
+def dependenciesConfig = rootProject.ext.dependencies
+
 android {
-    compileSdkVersion 28
+    compileSdkVersion androidConfig["compileSdkVersion"]
     defaultConfig {
-        applicationId "cn.luo.android.quick"
-        minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 1
-        versionName "v1.0"
+        applicationId androidConfig["applicationId"]
+        minSdkVersion androidConfig["minSdkVersion"]
+        targetSdkVersion androidConfig["targetSdkVersion"]
+        versionCode androidConfig["versionCode"]
+        versionName androidConfig["versionName"]
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
 
@@ -53,19 +57,19 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation project(':QuickLibrary')
-//    implementation 'com.github.luther168:QuickAndroid:0.0.7'
+//    implementation dependenciesConfig["QuickAndroid"]
 
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation dependenciesConfig["constraint-layout"]
 
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    annotationProcessor dependenciesConfig["arouter-compiler"]
 
-    implementation 'com.github.chaychan:PowerfulViewLibrary:1.2.1'
+    implementation dependenciesConfig["PowerfulViewLibrary"]
 
-    implementation 'ru.bartwell:exfilepicker:2.1'
+    implementation dependenciesConfig["exfilepicker"]
 
-    implementation 'net.zetetic:android-database-sqlcipher:3.5.9@aar'
+    implementation dependenciesConfig["android-database-sqlcipher"]
 
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation dependenciesConfig["rxandroid"]
 
-    implementation 'com.esri.arcgis.android:arcgis-android:10.2.9'
+    implementation dependenciesConfig["arcgis-android"]
 }
