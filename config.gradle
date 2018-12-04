@@ -41,7 +41,7 @@ project.ext {
 
             // Utils
             "utilcode"                     : "com.blankj:utilcode:1.22.0",
-            "QuickAndroid"                 : "com.github.luther168:QuickAndroid:0.0.7",
+            "QuickAndroid"                 : "com.github.luther168:QuickAndroid:1.0",
 
     ]
 }
