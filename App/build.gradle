@@ -18,12 +18,8 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = [moduleName: project.getName()]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
-        }
-
-        ndk {
-            abiFilters "armeabi-v7a"
         }
     }
     buildTypes {
@@ -39,7 +35,7 @@ android {
             buildConfigField "Boolean", "IS_DEBUG", "false"
         }
     }
-    packagingOptions{
+    packagingOptions {
         exclude 'META-INF/LGPL2.1'
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'

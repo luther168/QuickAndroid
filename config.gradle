@@ -22,7 +22,7 @@ project.ext {
 
             // Router
             "arouter-api"                  : "com.alibaba:arouter-api:1.4.1",
-            "arouter-compiler"             : "com.alibaba:arouter-compiler:1.1.4",
+            "arouter-compiler"             : "com.alibaba:arouter-compiler:1.2.2",
 
             // UI
             "EasyRefreshLayout"            : "com.github.anzaizai:EasyRefreshLayout:1.3.1",
