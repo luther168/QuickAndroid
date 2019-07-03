@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QuickAndroid</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="about">About</string>
+    <string name="copyright">Copyright@2019\nHurston all rights reserved</string>
+</resources>

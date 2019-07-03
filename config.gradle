@@ -1,0 +1,39 @@
+def supportVersion = "28.0.0"
+
+project.ext {
+    android = [
+            compileSdkVersion: 28,
+            applicationId    : "cn.luo.android.quick",
+            minSdkVersion    : 16,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    dependencies = [
+            // Android-support
+            supportV4                    : "com.android.support:support-v4:${supportVersion}",
+            appcompatV7                  : "com.android.support:appcompat-v7:${supportVersion}",
+            design                       : "com.android.support:design:${supportVersion}",
+            recyclerviewV7               : "com.android.support:recyclerview-v7:${supportVersion}",
+            cardviewV7                   : "com.android.support:cardview-v7:${supportVersion}",
+            constraintLayout             : "com.android.support.constraint:constraint-layout:1.1.3",
+            supportV13                   : "com.android.support:support-v13:${supportVersion}",
+
+            // Test
+            runner                       : "com.android.support.test:runner:1.0.2",
+            espressoCore                 : "com.android.support.test.espresso:espresso-core:3.0.2",
+            junit                        : "junit:junit:4.12",
+
+            // RecyclerView
+            EasyRefreshLayout            : "com.github.anzaizai:EasyRefreshLayout:1.3.1",
+            BaseRecyclerViewAdapterHelper: "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46",
+
+            // Router
+            arouterApi                   : "com.alibaba:arouter-api:1.5.0",
+            arouterCompiler              : "com.alibaba:arouter-compiler:1.2.2",
+
+            // Utils
+            utilcode                   : "com.blankj:utilcode:1.24.4",
+    ]
+}

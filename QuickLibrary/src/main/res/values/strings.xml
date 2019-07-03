@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">QuickLibrary</string>
+    <string name="permission_rationale_message">Please grant permission, otherwise it cannot be used normally</string>
+    <string name="permission_denied_forever_message">Not obtain necessary permissions, go to Settings - permissions on</string>
+    <string name="no_data">No data</string>
+    <string name="load_failed">Failed to load</string>
+
+</resources>
