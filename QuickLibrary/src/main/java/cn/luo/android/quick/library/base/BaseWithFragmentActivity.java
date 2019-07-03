@@ -63,5 +63,7 @@ public abstract class BaseWithFragmentActivity extends BaseActivity {
         return fragmentSparseArray.get(R.id.flFragment);
     }
 
-    protected abstract boolean showTitle();
+    protected boolean showTitle() {
+        return true;
+    }
 }
