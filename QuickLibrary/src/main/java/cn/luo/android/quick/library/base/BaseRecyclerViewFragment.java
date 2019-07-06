@@ -1,9 +1,11 @@
 package cn.luo.android.quick.library.base;
 
+import android.support.annotation.StringRes;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.ajguan.library.EasyRefreshLayout;
 import com.ajguan.library.LoadModel;
@@ -22,7 +24,7 @@ public abstract class BaseRecyclerViewFragment extends BaseFragment {
     protected RecyclerView recyclerView;
     protected EasyRefreshLayout easyRefreshLayout;
     protected View emptyView;
-
+    private TextView tvEmpty;
     private LinearLayout llTop;
 
     @Override
@@ -42,6 +44,7 @@ public abstract class BaseRecyclerViewFragment extends BaseFragment {
 
         emptyView = rootView.findViewById(R.id.emptyView);
         emptyView.setVisibility(View.GONE);
+        tvEmpty = emptyView.findViewById(R.id.tvEmpty);
 
         llTop = rootView.findViewById(R.id.llTop);
 
@@ -50,6 +53,14 @@ public abstract class BaseRecyclerViewFragment extends BaseFragment {
 
     protected void addTopView(View view) {
         llTop.addView(view);
+    }
+
+    protected void setEmptyText(String text) {
+        tvEmpty.setText(text);
+    }
+
+    protected void setEmptyText(@StringRes int res) {
+        tvEmpty.setText(res);
     }
 
     protected abstract RecyclerView.LayoutManager getLayoutManager();
