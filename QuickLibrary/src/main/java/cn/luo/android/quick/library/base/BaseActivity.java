@@ -88,9 +88,14 @@ public abstract class BaseActivity extends AppCompatActivity {
             case FINISH_BY_SLIDE_OUT_BOTTOM:
                 overridePendingTransition(R.anim.no_anim, R.anim.slide_out_bottom);
                 break;
+            case FINISH_DEFAULT:
             default:
                 break;
         }
+    }
+
+    protected int getFinishType() {
+        return FINISH_DEFAULT;
     }
 
     protected abstract int getLayoutResId();
@@ -100,7 +105,5 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initView();
 
     protected abstract void initAfterView();
-
-    protected abstract int getFinishType();
 
 }

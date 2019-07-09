@@ -34,6 +34,7 @@ project.ext {
             arouterCompiler              : "com.alibaba:arouter-compiler:1.2.2",
 
             // Utils
-            utilcode                   : "com.blankj:utilcode:1.24.4",
+            utilcode                     : "com.blankj:utilcode:1.24.4",
+            QuickAndroid                 : "com.github.luther168:QuickAndroid:1.1.1",
     ]
 }

@@ -38,6 +38,7 @@ dependencies {
     androidTestImplementation libraries.espressoCore
 
     implementation project(":QuickLibrary")
+//    implementation libraries.QuickAndroid
 
     annotationProcessor libraries.arouterCompiler
 }

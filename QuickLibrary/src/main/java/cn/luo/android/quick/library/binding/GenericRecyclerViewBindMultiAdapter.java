@@ -21,8 +21,8 @@ import cn.luo.android.quick.library.BR;
  * @createdTime 2018/11/28 16:56
  * @note
  */
-public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity, V extends ViewDataBinding>
-        extends BaseMultiItemQuickAdapter<T, GenericRecyclerViewBindMultiAdapter.ViewHolder<V>> {
+public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity>
+        extends BaseMultiItemQuickAdapter<T, GenericRecyclerViewBindMultiAdapter.ViewHolder> {
 
     public GenericRecyclerViewBindMultiAdapter(List<T> data, List<QuickViewType> viewTypeList) {
         super(data);
@@ -31,7 +31,7 @@ public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity, V ex
         }
     }
 
-    public GenericRecyclerViewBindMultiAdapter(View.OnClickListener listener, List<QuickViewType> viewTypeList) {
+    public GenericRecyclerViewBindMultiAdapter(List<QuickViewType> viewTypeList) {
         super(new ArrayList<T>());
         for (int i = 0; i < viewTypeList.size(); i++) {
             addItemType(viewTypeList.get(i).getViewType(), viewTypeList.get(i).getLayoutResId());
@@ -39,19 +39,19 @@ public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity, V ex
     }
 
     @Override
-    protected void convert(ViewHolder<V> helper, T item) {
+    protected void convert(ViewHolder helper, T item) {
         helper.bind(item);
     }
 
-    public static class ViewHolder<V extends ViewDataBinding> extends BaseViewHolder {
-        private V binding;
+    public static class ViewHolder extends BaseViewHolder {
+        private ViewDataBinding binding;
 
         ViewHolder(View convertView) {
             super(convertView);
             this.binding = DataBindingUtil.bind(convertView);
         }
 
-        public V getBinding() {
+        public ViewDataBinding getBinding() {
             return binding;
         }
 
