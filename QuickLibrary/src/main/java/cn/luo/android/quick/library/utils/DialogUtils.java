@@ -2,11 +2,12 @@ package cn.luo.android.quick.library.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+
+import androidx.appcompat.app.AlertDialog;
 
 /**
- * @author      Hurston
- * @version     1.0.0
+ * @author Hurston
+ * @version 1.0.0
  * @description
  * @createdTime 2018/11/28 17:01
  * @note

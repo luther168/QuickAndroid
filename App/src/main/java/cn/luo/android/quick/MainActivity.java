@@ -1,16 +1,17 @@
 package cn.luo.android.quick;
 
-import android.databinding.DataBindingUtil;
-import android.graphics.Color;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.TextUtils;
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +64,7 @@ public class MainActivity extends BaseActivity {
             List<MainMenu> list = new ArrayList<>();
             list.add(new MainMenu(getString(R.string.about), AppRouterUtils.FRAGMENT_ABOUT));
             final GenericRecyclerViewBindAdapter<MainMenu, ItemMenuBinding> adapter = new GenericRecyclerViewBindAdapter<>(R.layout.item_menu, list);
-            adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            adapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(BaseQuickAdapter baseQuickAdapter, View view, int position) {
                     MainMenu mainMenu = adapter.getItem(position);

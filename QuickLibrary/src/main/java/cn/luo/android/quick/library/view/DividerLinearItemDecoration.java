@@ -6,16 +6,18 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 
 import com.blankj.utilcode.util.LogUtils;
 
 /**
- * @author      Hurston
- * @version     1.0.0
+ * @author Hurston
+ * @version 1.0.0
  * @description
  * @createdTime 2018/11/28 17:01
  * @note
@@ -49,6 +51,7 @@ public class DividerLinearItemDecoration extends RecyclerView.ItemDecoration {
             mDividerHeight = mDivider.getIntrinsicHeight();
         }
     }
+
     public DividerLinearItemDecoration(Context context, int orientation, int dividerHeight, int dividerColor) {
         this(context, orientation);
         this.mDividerHeight = dividerHeight;

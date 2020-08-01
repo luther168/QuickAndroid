@@ -1,14 +1,14 @@
 package cn.luo.android.quick.library.binding;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
 
+import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.databinding.ViewDataBinding;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder;
 
 import java.util.List;
 
@@ -24,16 +24,12 @@ import cn.luo.android.quick.library.BR;
 public class GenericRecyclerViewBindAdapter<T, V extends ViewDataBinding>
         extends BaseQuickAdapter<T, GenericRecyclerViewBindAdapter.ViewHolder<V>> {
 
-    public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId, @Nullable List<T> data) {
-        super(layoutResId, data);
-    }
-
-    public GenericRecyclerViewBindAdapter(@Nullable List<T> data) {
-        super(data);
-    }
-
     public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId) {
         super(layoutResId);
+    }
+
+    public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId, @Nullable List<T> data) {
+        super(layoutResId, data);
     }
 
     @Override
@@ -41,21 +37,18 @@ public class GenericRecyclerViewBindAdapter<T, V extends ViewDataBinding>
         helper.bind(item);
     }
 
-    public static class ViewHolder<V extends ViewDataBinding> extends BaseViewHolder {
-        private V binding;
+    public static class ViewHolder<V extends ViewDataBinding> extends BaseDataBindingHolder<V> {
 
         ViewHolder(View convertView) {
             super(convertView);
-            this.binding = DataBindingUtil.bind(convertView);
-        }
-
-        public V getBinding() {
-            return binding;
         }
 
         void bind(@NonNull Object item) {
-            binding.setVariable(BR.item, item);
-            binding.setVariable(BR.position, getLayoutPosition());
+            V binding = getDataBinding();
+            if (binding != null) {
+                binding.setVariable(BR.item, item);
+                binding.setVariable(BR.position, getLayoutPosition());
+            }
         }
     }
 }

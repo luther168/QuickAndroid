@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.StringRes;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.StringRes;
+
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -21,8 +23,8 @@ import android.widget.TextView;
 import cn.luo.android.quick.library.R;
 
 /**
- * @author      Hurston
- * @version     1.0.0
+ * @author Hurston
+ * @version 1.0.0
  * @description
  * @createdTime 2018/11/28 17:01
  * @note

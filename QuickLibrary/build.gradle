@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group='com.github.luther168'
+group = 'com.github.luther168'
 
 def androidConfig = rootProject.ext.android
 def libraries = rootProject.ext.dependencies
@@ -13,7 +13,7 @@ android {
         targetSdkVersion androidConfig.targetSdkVersion
         versionCode 4
         versionName "1.1.2"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     buildTypes {
@@ -31,18 +31,17 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    api libraries.appcompatV7
-    api libraries.constraintLayout
-    api libraries.recyclerviewV7
+    api libraries.appcompat
+    api libraries.constraintlayout
+    api libraries.recyclerview
 
-    testImplementation libraries.junit
-    androidTestImplementation libraries.runner
-    androidTestImplementation libraries.espressoCore
+    testImplementation libraries.espressoCore
+    androidTestImplementation libraries.extJunit
+    androidTestImplementation libraries.junit
 
-    api libraries.EasyRefreshLayout
     api libraries.BaseRecyclerViewAdapterHelper
 
     api libraries.arouterApi
 
-    api libraries.utilcode
+    api libraries.utilcodex
 }

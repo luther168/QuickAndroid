@@ -2,16 +2,18 @@ package cn.luo.android.quick.library.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.util.SparseArray;
 
 import cn.luo.android.quick.library.R;
 
 /**
- * @author      Hurston
- * @version     1.0.0
+ * @author Hurston
+ * @version 1.0.0
  * @description
  * @createdTime 2018/11/28 16:16
  * @note

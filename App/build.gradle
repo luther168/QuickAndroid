@@ -11,7 +11,7 @@ android {
         targetSdkVersion androidConfig.targetSdkVersion
         versionCode androidConfig.versionCode
         versionName androidConfig.versionName
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 
         javaCompileOptions {
             annotationProcessorOptions {
@@ -33,9 +33,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation libraries.junit
-    androidTestImplementation libraries.runner
-    androidTestImplementation libraries.espressoCore
+    testImplementation libraries.espressoCore
+    androidTestImplementation libraries.extJunit
+    androidTestImplementation libraries.junit
+
+    implementation libraries.drawerlayout
 
     implementation project(":QuickLibrary")
 //    implementation libraries.QuickAndroid

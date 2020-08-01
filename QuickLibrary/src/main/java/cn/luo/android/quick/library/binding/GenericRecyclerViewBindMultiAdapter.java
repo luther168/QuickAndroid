@@ -1,13 +1,14 @@
 package cn.luo.android.quick.library.binding;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.support.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.annotation.NonNull;
+
 import android.view.View;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
-import com.chad.library.adapter.base.BaseViewHolder;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,15 +25,15 @@ import cn.luo.android.quick.library.BR;
 public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity>
         extends BaseMultiItemQuickAdapter<T, GenericRecyclerViewBindMultiAdapter.ViewHolder> {
 
-    public GenericRecyclerViewBindMultiAdapter(List<T> data, List<QuickViewType> viewTypeList) {
-        super(data);
+    public GenericRecyclerViewBindMultiAdapter(List<QuickViewType> viewTypeList) {
+        super(new ArrayList<T>());
         for (int i = 0; i < viewTypeList.size(); i++) {
             addItemType(viewTypeList.get(i).getViewType(), viewTypeList.get(i).getLayoutResId());
         }
     }
 
-    public GenericRecyclerViewBindMultiAdapter(List<QuickViewType> viewTypeList) {
-        super(new ArrayList<T>());
+    public GenericRecyclerViewBindMultiAdapter(List<T> data, List<QuickViewType> viewTypeList) {
+        super(data);
         for (int i = 0; i < viewTypeList.size(); i++) {
             addItemType(viewTypeList.get(i).getViewType(), viewTypeList.get(i).getLayoutResId());
         }
@@ -43,16 +44,12 @@ public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity>
         helper.bind(item);
     }
 
-    public static class ViewHolder extends BaseViewHolder {
+    public static class ViewHolder extends BaseDataBindingHolder {
         private ViewDataBinding binding;
 
         ViewHolder(View convertView) {
             super(convertView);
             this.binding = DataBindingUtil.bind(convertView);
-        }
-
-        public ViewDataBinding getBinding() {
-            return binding;
         }
 
         void bind(@NonNull Object item) {

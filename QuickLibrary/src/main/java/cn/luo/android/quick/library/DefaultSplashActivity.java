@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 
 import com.blankj.utilcode.util.PermissionUtils;
 import com.blankj.utilcode.util.ScreenUtils;
+import com.blankj.utilcode.util.UtilsTransActivity;
 
 import java.util.List;
 
@@ -13,8 +14,8 @@ import cn.luo.android.quick.library.base.BaseActivity;
 import cn.luo.android.quick.library.utils.DialogUtils;
 
 /**
- * @author      Hurston
- * @version     1.0.0
+ * @author Hurston
+ * @version 1.0.0
  * @description
  * @createdTime 2018/11/28 17:02
  * @note
@@ -38,7 +39,7 @@ public class DefaultSplashActivity extends BaseActivity {
             PermissionUtils.permission(permissions)
                     .rationale(new PermissionUtils.OnRationaleListener() {
                         @Override
-                        public void rationale(final ShouldRequest shouldRequest) {
+                        public void rationale(UtilsTransActivity activity, final ShouldRequest shouldRequest) {
                             DialogUtils.show(context, android.R.string.dialog_alert_title, R.string.permission_rationale_message,
                                     android.R.string.ok, new DialogInterface.OnClickListener() {
                                         @Override

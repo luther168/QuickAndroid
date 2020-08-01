@@ -1,6 +1,6 @@
 package cn.luo.android.quick.library.utils;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
@@ -8,8 +8,8 @@ import cn.luo.android.quick.library.base.BaseFragment;
 import cn.luo.android.quick.library.base.BaseLoadFailedFragment;
 
 /**
- * @author      Hurston
- * @version     1.0.0
+ * @author Hurston
+ * @version 1.0.0
  * @description
  * @createdTime 2018/11/28 16:58
  * @note

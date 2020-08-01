@@ -1,6 +1,7 @@
 package cn.luo.android.quick;
 
-import android.databinding.DataBindingUtil;
+import androidx.databinding.DataBindingUtil;
+
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;

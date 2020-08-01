@@ -14,17 +14,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.ajguan.library.EasyRefreshLayout
-            android:id="@+id/easyRefreshLayout"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </com.ajguan.library.EasyRefreshLayout>
+            android:layout_height="match_parent" />
 
         <include layout="@layout/view_empty" />
     </RelativeLayout>
