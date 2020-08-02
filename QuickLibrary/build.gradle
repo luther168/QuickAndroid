@@ -45,4 +45,6 @@ dependencies {
     api libraries.arouterApi
 
     api libraries.utilcodex
+
+    api libraries.xpopup
 }

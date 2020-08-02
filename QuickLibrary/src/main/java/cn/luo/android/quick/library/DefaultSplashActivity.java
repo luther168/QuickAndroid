@@ -2,16 +2,17 @@ package cn.luo.android.quick.library;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.DialogInterface;
 
 import com.blankj.utilcode.util.PermissionUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.UtilsTransActivity;
+import com.lxj.xpopup.XPopup;
+import com.lxj.xpopup.interfaces.OnCancelListener;
+import com.lxj.xpopup.interfaces.OnConfirmListener;
 
 import java.util.List;
 
 import cn.luo.android.quick.library.base.BaseActivity;
-import cn.luo.android.quick.library.utils.DialogUtils;
 
 /**
  * @author Hurston
@@ -40,18 +41,21 @@ public class DefaultSplashActivity extends BaseActivity {
                     .rationale(new PermissionUtils.OnRationaleListener() {
                         @Override
                         public void rationale(UtilsTransActivity activity, final ShouldRequest shouldRequest) {
-                            DialogUtils.show(context, android.R.string.dialog_alert_title, R.string.permission_rationale_message,
-                                    android.R.string.ok, new DialogInterface.OnClickListener() {
+                            new XPopup.Builder(context).asConfirm(getString(android.R.string.dialog_alert_title),
+                                    getString(R.string.permission_rationale_message),
+                                    getString(android.R.string.cancel),
+                                    getString(android.R.string.ok), new OnConfirmListener() {
                                         @Override
-                                        public void onClick(DialogInterface dialog, int which) {
+                                        public void onConfirm() {
                                             shouldRequest.again(true);
                                         }
-                                    }, android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                    }, new OnCancelListener() {
                                         @Override
-                                        public void onClick(DialogInterface dialog, int which) {
+                                        public void onCancel() {
                                             shouldRequest.again(false);
                                         }
-                                    }, false);
+                                    }, false)
+                                    .show();
                         }
                     })
                     .callback(new PermissionUtils.FullCallback() {
@@ -62,18 +66,20 @@ public class DefaultSplashActivity extends BaseActivity {
 
                         @Override
                         public void onDenied(List<String> permissionsDeniedForever, List<String> permissionsDenied) {
-                            DialogUtils.show(context, android.R.string.dialog_alert_title, R.string.permission_denied_forever_message,
-                                    android.R.string.ok, new DialogInterface.OnClickListener() {
+                            new XPopup.Builder(context).asConfirm(getString(android.R.string.dialog_alert_title),
+                                    getString(R.string.permission_denied_forever_message),
+                                    getString(android.R.string.cancel),
+                                    getString(android.R.string.ok), new OnConfirmListener() {
                                         @Override
-                                        public void onClick(DialogInterface dialog, int which) {
+                                        public void onConfirm() {
                                             PermissionUtils.launchAppDetailsSettings();
                                         }
-                                    }, android.R.string.cancel, new DialogInterface.OnClickListener() {
+                                    }, new OnCancelListener() {
                                         @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-
+                                        public void onCancel() {
                                         }
-                                    }, false);
+                                    }, false)
+                                    .show();
                         }
                     })
                     .theme(new PermissionUtils.ThemeCallback() {

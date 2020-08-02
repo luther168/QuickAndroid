@@ -2,7 +2,7 @@ project.ext {
     android = [
             compileSdkVersion: 29,
             applicationId    : "cn.luo.android.quick",
-            minSdkVersion    : 16,
+            minSdkVersion    : 19,
             targetSdkVersion : 29,
             versionCode      : 1,
             versionName      : "1.0"
@@ -31,5 +31,8 @@ project.ext {
             // Utils
             utilcodex                    : "com.blankj:utilcodex:1.29.0",
             QuickAndroid                 : "com.github.luther168:QuickAndroid:1.1.2",
+
+            // Popup
+            xpopup                       : "com.lxj:xpopup:2.0.8",
     ]
 }
