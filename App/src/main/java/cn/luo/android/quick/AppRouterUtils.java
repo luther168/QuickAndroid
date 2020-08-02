@@ -16,4 +16,5 @@ public class AppRouterUtils extends ARouterUtils {
     public static final String GROUP_APP_FRAGMENT = APP_ROOT_GROUP + GROUP_FRAGMENT;
 
     public static final String FRAGMENT_ABOUT = GROUP_APP_FRAGMENT + "about";
+    public static final String FRAGMENT_DEMO_LIST = GROUP_APP_FRAGMENT + "demoList";
 }

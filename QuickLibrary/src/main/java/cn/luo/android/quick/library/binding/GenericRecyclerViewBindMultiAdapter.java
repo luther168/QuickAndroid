@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.chad.library.adapter.base.module.LoadMoreModule;
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder;
 
 import java.util.ArrayList;
@@ -23,7 +24,8 @@ import cn.luo.android.quick.library.BR;
  * @note
  */
 public class GenericRecyclerViewBindMultiAdapter<T extends MultiItemEntity>
-        extends BaseMultiItemQuickAdapter<T, GenericRecyclerViewBindMultiAdapter.ViewHolder> {
+        extends BaseMultiItemQuickAdapter<T, GenericRecyclerViewBindMultiAdapter.ViewHolder>
+        implements LoadMoreModule {
 
     public GenericRecyclerViewBindMultiAdapter(List<QuickViewType> viewTypeList) {
         super(new ArrayList<T>());

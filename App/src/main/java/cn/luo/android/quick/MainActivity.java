@@ -62,6 +62,7 @@ public class MainActivity extends BaseActivity {
             RecyclerView recyclerViewLeft = binding.recyclerViewLeft;
             recyclerViewLeft.setLayoutManager(new LinearLayoutManager(context));
             List<MainMenu> list = new ArrayList<>();
+            list.add(new MainMenu(getString(R.string.demo), AppRouterUtils.FRAGMENT_DEMO_LIST));
             list.add(new MainMenu(getString(R.string.about), AppRouterUtils.FRAGMENT_ABOUT));
             final GenericRecyclerViewBindAdapter<MainMenu, ItemMenuBinding> adapter = new GenericRecyclerViewBindAdapter<>(R.layout.item_menu, list);
             adapter.setOnItemClickListener(new OnItemClickListener() {

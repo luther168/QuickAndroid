@@ -3,10 +3,13 @@ package cn.luo.android.quick.library.base;
 import androidx.annotation.StringRes;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.chad.library.adapter.base.listener.OnLoadMoreListener;
 
 import cn.luo.android.quick.library.R;
 
@@ -17,9 +20,11 @@ import cn.luo.android.quick.library.R;
  * @createdTime 2018/11/28 16:17
  * @note
  */
-public abstract class BaseRecyclerViewFragment extends BaseFragment {
+public abstract class BaseRecyclerViewFragment extends BaseFragment
+        implements SwipeRefreshLayout.OnRefreshListener, OnLoadMoreListener {
 
     protected RecyclerView recyclerView;
+    protected SwipeRefreshLayout refreshLayout;
     protected View emptyView;
     private TextView tvEmpty;
     private LinearLayout llTop;
@@ -35,6 +40,10 @@ public abstract class BaseRecyclerViewFragment extends BaseFragment {
         RecyclerView.LayoutManager layoutManager = getLayoutManager();
         recyclerView.setLayoutManager(layoutManager == null ? new LinearLayoutManager(context) : layoutManager);
 
+        refreshLayout = rootView.findViewById(R.id.refreshLayout);
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setEnabled(false);
+
         emptyView = rootView.findViewById(R.id.emptyView);
         emptyView.setVisibility(View.GONE);
         tvEmpty = emptyView.findViewById(R.id.tvEmpty);
@@ -42,6 +51,18 @@ public abstract class BaseRecyclerViewFragment extends BaseFragment {
         llTop = rootView.findViewById(R.id.llTop);
 
         initRecyclerView();
+        refreshLayout.setRefreshing(true);
+        onRefresh();
+    }
+
+    @Override
+    public void onRefresh() {
+
+    }
+
+    @Override
+    public void onLoadMore() {
+
     }
 
     protected void addTopView(View view) {

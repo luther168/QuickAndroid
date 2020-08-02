@@ -34,6 +34,7 @@ dependencies {
     api libraries.appcompat
     api libraries.constraintlayout
     api libraries.recyclerview
+    api libraries.swiperefreshlayout
 
     testImplementation libraries.espressoCore
     androidTestImplementation libraries.extJunit

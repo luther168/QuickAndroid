@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.ViewDataBinding;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.module.LoadMoreModule;
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder;
 
 import java.util.List;
@@ -22,7 +23,8 @@ import cn.luo.android.quick.library.BR;
  * @note
  */
 public class GenericRecyclerViewBindAdapter<T, V extends ViewDataBinding>
-        extends BaseQuickAdapter<T, GenericRecyclerViewBindAdapter.ViewHolder<V>> {
+        extends BaseQuickAdapter<T, GenericRecyclerViewBindAdapter.ViewHolder<V>>
+        implements LoadMoreModule {
 
     public GenericRecyclerViewBindAdapter(@LayoutRes int layoutResId) {
         super(layoutResId);
